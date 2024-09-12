@@ -2,8 +2,12 @@ import styled from "styled-components";
 import React from "react";
 
 const StyledSVG = styled.svg`
-  margin: 5px;
-  color: #857889;
+  stroke-width: 2;
+  flex-shrink: 0;
+  height: 24px;
+  width: 24px;
+  display: block;
+  vertical-align: middle;
 `;
 
 const StyledSVGWithHover = styled.svg`
@@ -11,12 +15,12 @@ const StyledSVGWithHover = styled.svg`
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   height: 100%;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 
   &:hover {
-      background-color: #ededed;
-      cursor: pointer;
+    background-color: #ededed;
+    cursor: pointer;
   }
-`
+`;
 
 export { StyledSVG, StyledSVGWithHover };
