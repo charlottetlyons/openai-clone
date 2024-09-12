@@ -12,13 +12,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        test: /\.(png|jpe?g|gif|woff|woff2|eot|ttf|otf)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[name].[hash].[ext]',
-              outputPath: 'fonts/',  // Where the fonts will be output
+              outputPath: 'fonts/',
             },
           },
         ],

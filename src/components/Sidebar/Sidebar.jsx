@@ -31,7 +31,7 @@ const StyledSidebarList = styled.div`
   transition-duration: 0.5s;
 `;
 
-const Sidebar = ({ children }) => {
+const Sidebar = () => {
   return (
     <StyledSidebar>
       <ButtonBar />
