@@ -1,8 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import ButtonBar from "./ButtonBar.jsx";
-import SidebarList from "./SidebarList.jsx";
-import Avatar from "../common/Avatar.jsx";
 import { StyledSVG } from "../common/StyledSVG.jsx";
 
 const StyledSidebarDrawer = styled.div`
@@ -11,12 +8,12 @@ const StyledSidebarDrawer = styled.div`
   background-color: #f9f9f9;
   overflow-x: hidden;
   flex-shrink: 0;
-  flex-direction: column;
   min-height: 0;
   display: flex;
   app-region: drag;
   position: relative;
   border-color: #fff3;
+  box-sizing: border-box;
 `;
 const StyledSidebarNav = styled.nav`
   padding-left: 0.75rem;
@@ -31,6 +28,8 @@ const StyledSidebarSection = styled.div`
   display: flex;
   justify-content: space-between;
   height: 3.5rem;
+  scrollbar-color: #ececec transparent;
+  border: 0 solid #e3e3e3;
 `;
 const StyledSidebarSubsection = styled.div``;
 
@@ -49,11 +48,13 @@ const StyledButton = styled.button`
   text-transform: none;
   border: 0;
   color: #7d7d7d;
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
 
-  input:where([type=button]), input:where([type=reset]), input:where([type=submit]) {
-    -webkit-appearance: button;
-    background-color: transparent;
-    background-image: none;
+  &:hover {
+    background-color: #ececec
+  }
 `;
 
 const InvisibleH2 = styled.h2`
