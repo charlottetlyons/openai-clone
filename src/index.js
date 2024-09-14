@@ -12,4 +12,5 @@ const App = () => {
     </AppContainer>;
 };
 
+// TODO: update use of deprecated render method 
 ReactDOM.render(<App />, document.getElementById('root'));
