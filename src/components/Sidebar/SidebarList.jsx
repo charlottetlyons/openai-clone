@@ -10,7 +10,7 @@ const StyledAContainer = styled.div`
   display: flex;
   flex-direction: row;
   word-wrap: hide;
-  width: 100%
+  width: 100%;
 `;
 
 const StyledA = styled.a`
@@ -24,7 +24,7 @@ const StyledA = styled.a`
   align-items: center;
   width: 100%;
   cursor: pointer;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 
   &:hover {
     background-color: #ececec;
@@ -33,17 +33,18 @@ const StyledA = styled.a`
 
 const SidebarList = ({ items }) => {
   return (
-    <StyledSidebar>
-      <StyledSideBarListContainer>
-        {items.map((item, index) => (
-          <StyledAContainer>
-            <StyledA key={index}>
-              <Avatar />{item}
-            </StyledA>
-          </StyledAContainer>
-        ))}
-      </StyledSideBarListContainer>
-    </StyledSidebar>
+    // <StyledSidebar>
+    //   <StyledSideBarListContainer>
+    //     {items.map((item, index) => (
+    //       <StyledAContainer>
+    //         <StyledA key={index}>
+    //           <Avatar />{item}
+    //         </StyledA>
+    //       </StyledAContainer>
+    //     ))}
+    //   </StyledSideBarListContainer>
+    // </StyledSidebar>
+    <></>
   );
 };
 

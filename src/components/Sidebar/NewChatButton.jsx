@@ -1,51 +1,7 @@
 import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import { StyledSVG } from "../common/StyledSVG.jsx";
-
-const StyledNewChatButton = styled.a`
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  font-weight: 400;
-  background-color: #f9f9f9;
-  border-radius: 0.5rem;
-  gap: 0.625rem;
-  align-items: center;
-  height: 2.5rem;
-  display: flex;
-  gap: 0.625rem;
-
-  &:hover {
-    // TODO: make common colors
-    background-color: #ececec;
-  }
-`;
-
-const StyledGPTIconContainer = styled.div`
-  flex-shrink: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-`;
-
-const StyledGPTIcon = styled.div`
-  color: #0d0d0d;
-  background-color: #fff;
-  border-radius: 9999px;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  display: flex;
-  position: relative;
-`;
-
-const StyledNewChatText = styled.div`
-  color: #0d0d0d;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  flex-grow: 1;
-`;
+import SidebarButton from "./SidebarButton.jsx";
 
 const StyledNewChatIconContainer = styled.div`
   gap: 0.5rem;
@@ -71,9 +27,9 @@ const StyledSubButton = styled.button`
 `;
 
 const NewChatButton = (props) => {
-  const { gptName, pathElement } = props;
-  const [showIcon, setShowIcon] = useState(false);
+  const { id, gptName, pathElement } = props;
   const [showIconTextBlack, setShowIconTextBlack] = useState(false);
+  const [showIcon, setShowIcon] = useState(false);
 
   const hoverHandler = useCallback(() => {
     setShowIcon(true);
@@ -92,33 +48,24 @@ const NewChatButton = (props) => {
   }, [setShowIcon]);
 
   return (
-    <StyledNewChatButton
-      onMouseEnter={hoverHandler}
-      onMouseLeave={leaveHandler}
+    <SidebarButton
+      style={{
+        width: "66.666667%",
+        height: "66.666667%",
+      }}
+      svgProps={{
+        width: "41",
+        height: "41",
+        viewBox: "0 0 41 41",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        role: "img",
+      }}
+      textContent={gptName}
+      pathElement={pathElement}
+      hoverHandler={hoverHandler}
+      leaveHandler={leaveHandler}
     >
-      <StyledGPTIconContainer>
-        <StyledGPTIcon>
-          <StyledSVG
-            style={{
-              width: "66.666667%",
-              height: "66.666667%",
-            }}
-            width="41"
-            height="41"
-            viewBox="0 0 41 41"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-          >
-            <text x="-9999" y="-9999">
-              {gptName}
-            </text>
-            {pathElement}
-          </StyledSVG>
-        </StyledGPTIcon>
-      </StyledGPTIconContainer>
-      <StyledNewChatText>{gptName}</StyledNewChatText>
-
       <StyledButtonIcon>
         <StyledSubButton
           style={{
@@ -140,7 +87,6 @@ const NewChatButton = (props) => {
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            class="icon-md"
           >
             <path
               fillRule="evenodd"
@@ -185,7 +131,7 @@ const NewChatButton = (props) => {
           </StyledSubButton>
         </StyledButtonIcon>
       </StyledNewChatIconContainer>
-    </StyledNewChatButton>
+    </SidebarButton>
   );
 };
 
